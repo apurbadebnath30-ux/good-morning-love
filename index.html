@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>Good Morning, My Love 💗</title>
+<style>
+:root{--pink:#f5b7cb;--deep:#bd4c77;--cream:#fffaf5;--ink:#63394b;--red:#ed789c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(160deg,#fffaf7,#ffeaf1 60%,#fff4eb);color:var(--ink);font-family:"Trebuchet MS",Arial,sans-serif;text-align:center;overflow-x:hidden}
+button{font:inherit;cursor:pointer;border:0}
+main{width:min(100%,650px);margin:auto;padding:24px 18px 50px}
+.eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:11px;color:var(--deep);font-weight:800}
+h1{font-size:clamp(32px,8vw,52px);line-height:1.08;margin:15px 0;color:var(--deep)}
+h2{font-size:clamp(23px,6vw,32px);margin:8px 0 14px}
+p{line-height:1.7}
+.hero{padding:26px 0 30px}
+.kitty{font-size:95px;line-height:1.2;filter:drop-shadow(0 8px 8px #d78da444);animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-9px) rotate(2deg)}}
+.btn{border-radius:999px;padding:14px 22px;margin:6px;background:var(--deep);color:white;box-shadow:0 6px 16px #bd4c7730;font-weight:800}
+.btn.light{background:#fff;color:var(--deep);border:1px solid #f5c6d5;box-shadow:none}
+.panel{background:#ffffffd9;border:1px solid #f7cbd8;border-radius:26px;padding:22px 17px;margin:18px auto;box-shadow:0 12px 30px #b34b7412}
+.hidden{display:none!important}
+.photo{display:block;width:min(100%,310px);max-height:380px;object-fit:cover;object-position:center 35%;margin:20px auto;border-radius:25px;border:7px solid white;box-shadow:0 10px 30px #b34b7420}
+.gifts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0}
+.gift{background:#fff4f7;border:1px solid #f5c6d5;border-radius:20px;padding:17px 5px;color:var(--deep);font-weight:800;min-width:0}
+.gift span{display:block;font-size:36px;margin-bottom:8px}
+.gift small{font-size:12px}
+.letter{background:#fffaf0;text-align:left;padding:24px 19px;border:2px dashed #e9a2b9;border-radius:16px;line-height:1.9;white-space:pre-line}
+.letter h2{text-align:center;font-family:Georgia,serif;font-style:italic}
+.reason{padding:16px;border-radius:17px;background:#fff4f7;margin:11px 0;text-align:left;line-height:1.55}
+.reason b{color:var(--deep)}
+.song-card{padding:18px;background:#fff4f7;border-radius:22px}
+audio{width:100%;margin-top:12px}
+.note{font-size:12px;opacity:.8}
+.heart{position:fixed;bottom:-35px;pointer-events:none;animation:rise 4s linear forwards;z-index:9}
+@keyframes rise{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+footer{padding:24px;font-size:12px;color:#a65c79}
+@media(max-width:370px){main{padding-inline:12px}.gifts{gap:6px}.gift{padding:14px 3px}.gift span{font-size:30px}.btn{padding:12px 17px}}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero" id="welcome">
+    <div class="eyebrow">a tiny surprise made just for you 🌷</div>
+    <h1>Good Morning,<br>My Love ☀️</h1>
+    <p>I hope this little corner of the internet<br>makes you smile today. 💗</p>
+    <div class="kitty" aria-label="kitten with flowers">🐱💐</div>
+    <p>Will you accept your little gift?</p>
+    <button class="btn" onclick="acceptGift()">YES, OPEN IT 💌</button>
+    <button class="btn light" onclick="sayNo()">NO 🙈</button>
+    <div id="noMessage" class="panel hidden">
+      <h2>HOW DARE YOU! 😾</h2>
+      <div class="kitty">🐱🎀</div>
+      <p>My tiny gift is shy… give it another chance? 🥺</p>
+      <button class="btn" onclick="acceptGift()">TRY AGAIN 💗</button>
+    </div>
+  </section>
+
+  <section id="giftPage" class="panel hidden">
+    <div class="eyebrow">pick your surprise</div>
+    <h2>Three little gifts for you 🎁</h2>
+    <p>Each one has a little piece of my heart.</p>
+    <div class="gifts">
+      <button class="gift" onclick="showSection('letterSection')"><span>💌</span><small>My letter</small></button>
+      <button class="gift" onclick="showSection('songSection')"><span>🎧</span><small>Our song</small></button>
+      <button class="gift" onclick="showSection('reasonsSection')"><span>💗</span><small>Why I love you</small></button>
+    </div>
+    <p class="note">Tap any gift to open it ✨</p>
+  </section>
+
+  <section id="letterSection" class="panel hidden">
+    <div class="eyebrow">gift one · just for you</div>
+    <h2>My letter to you 💌</h2>
+    <img class="photo" src="her-photo.jpg" alt="A special photo">
+    <div class="letter">Good morning, my favourite person. 🌷
+
+I wish I could be there to give you the biggest hug and remind you how special you are to me.
+
+You feel like home to me — the person I want to tell everything to, the person I look for when my day feels heavy, and the person who can make ordinary moments feel important.
+
+I know we may have difficult moments sometimes, and I might not always find the perfect words. But I care about you, I value what we have, and I want us to keep listening to each other and choosing kindness.
+
+I hope today brings you little reasons to smile. Please take care of yourself, eat something good, and remember that you deserve gentleness and happiness.
+
+Thank you for being you, cutuuu. You mean so much to me. 💗
+
+With all my love,
+your girl 🌸</div>
+    <button class="btn light" onclick="backToGifts()">BACK TO GIFTS 🎁</button>
+  </section>
+
+  <section id="songSection" class="panel hidden">
+    <div class="eyebrow">gift two · press play</div>
+    <h2>Tera Naam Doon 🎶</h2>
+    <img class="photo" src="her-photo.jpg" alt="A favourite memory">
+    <div class="song-card">
+      <div style="font-size:38px">🎵💗🎵</div>
+      <p>A song for you, my love.</p>
+      <p class="note">Add an audio file named <b>tera-naam-doon.mp3</b> to this repository for the play button to work.</p>
+      <audio controls preload="none">
+        <source src="tera-naam-doon.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio>
+    </div>
+    <button class="btn light" onclick="backToGifts()">BACK TO GIFTS 🎁</button>
+  </section>
+
+  <section id="reasonsSection" class="panel hidden">
+    <div class="eyebrow">gift three · ten little reasons</div>
+    <h2>Things I love about you 💗</h2>
+    <p>Tap the button to reveal them one by one.</p>
+    <div id="reasonsList"></div>
+    <button class="btn" onclick="revealReason()">REVEAL A REASON 💌</button>
+    <p id="reasonCount" class="note">0 of 10 revealed</p>
+    <button class="btn light" onclick="backToGifts()">BACK TO GIFTS 🎁</button>
+  </section>
+</main>
+<footer>made with love, just for you 💗</footer>
+
+<script>
+const reasons = [
+  "You take care of me like my mother, and that makes me feel so looked after. 🌷",
+  "You're literally my comfort zone, and you're someone I never want to take for granted. 🫂",
+  "You're the first and last girl I want to love this way. 💗",
+  "Sometimes you're a little 🤏🏻 annoying, but at the end of the day, you're the person I want to go to. 😂💕",
+  "You're the love of my lifeee. 🫠💋",
+  "I've become so freaking close to you, and that closeness means everything to me. 🧸",
+  "You're the person I trust with my whole heart. 🤍",
+  "My family asks about you so much that sometimes they ask about you more than me. 😭",
+  "You're simply the cutuuu. 🎀",
+  "My mom and grandmother care about you so much and always ask about you. That makes you feel like part of my little world. 🌸"
+];
+let revealed = 0;
+
+function acceptGift(){
+  document.getElementById("noMessage").classList.add("hidden");
+  document.getElementById("giftPage").classList.remove("hidden");
+  document.getElementById("giftPage").scrollIntoView({behavior:"smooth"});
+  makeHearts();
+}
+function sayNo(){
+  document.getElementById("noMessage").classList.remove("hidden");
+  document.getElementById("noMessage").scrollIntoView({behavior:"smooth",block:"center"});
+}
+function showSection(id){
+  ["letterSection","songSection","reasonsSection"].forEach(x=>document.getElementById(x).classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
+  document.getElementById(id).scrollIntoView({behavior:"smooth",block:"start"});
+  makeHearts();
+}
+function backToGifts(){
+  ["letterSection","songSection","reasonsSection"].forEach(x=>document.getElementById(x).classList.add("hidden"));
+  document.getElementById("giftPage").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function revealReason(){
+  if(revealed>=reasons.length) return;
+  const box=document.createElement("div");
+  box.className="reason";
+  box.innerHTML="<b>Reason "+(revealed+1)+" 💗</b><br>"+reasons[revealed];
+  document.getElementById("reasonsList").appendChild(box);
+  revealed++;
+  document.getElementById("reasonCount").textContent=revealed+" of 10 revealed";
+  if(revealed===reasons.length) document.querySelector("#reasonsSection .btn").textContent="ALL MY REASONS, JUST FOR YOU 💖";
+  makeHearts();
+}
+function makeHearts(){
+  const emojis=["💗","💕","🌸","✨","💖"];
+  for(let i=0;i<12;i++){
+    const el=document.createElement("div");
+    el.className="heart";
+    el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left=Math.random()*100+"vw";
+    el.style.fontSize=(16+Math.random()*15)+"px";
+    el.style.animationDuration=(3+Math.random()*2)+"s";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),5500);
+  }
+}
+</script>
+</body>
+</html>
