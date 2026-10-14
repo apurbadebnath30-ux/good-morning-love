@@ -3,203 +3,348 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fff0f5">
-<title>Good Morning, My Love 💗</title>
+<title>A Little Gift For You 💗</title>
+
 <style>
-:root{--pink:#f5b7cb;--deep:#bd4c77;--cream:#fffaf5;--ink:#63394b;--red:#ed789c}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:linear-gradient(160deg,#fffaf7,#ffeaf1 60%,#fff4eb);color:var(--ink);font-family:"Trebuchet MS",Arial,sans-serif;text-align:center;overflow-x:hidden}
-button{font:inherit;cursor:pointer;border:0}
-main{width:min(100%,650px);margin:auto;padding:24px 18px 50px}
-.eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:11px;color:var(--deep);font-weight:800}
-h1{font-size:clamp(32px,8vw,52px);line-height:1.08;margin:15px 0;color:var(--deep)}
-h2{font-size:clamp(23px,6vw,32px);margin:8px 0 14px}
-p{line-height:1.7}
-.hero{padding:26px 0 30px}
-.kitty{font-size:95px;line-height:1.2;filter:drop-shadow(0 8px 8px #d78da444);animation:bob 3s ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(-9px) rotate(2deg)}}
-.btn{border-radius:999px;padding:14px 22px;margin:6px;background:var(--deep);color:white;box-shadow:0 6px 16px #bd4c7730;font-weight:800}
-.btn.light{background:#fff;color:var(--deep);border:1px solid #f5c6d5;box-shadow:none}
-.panel{background:#ffffffd9;border:1px solid #f7cbd8;border-radius:26px;padding:22px 17px;margin:18px auto;box-shadow:0 12px 30px #b34b7412}
-.hidden{display:none!important}
-.photo{display:block;width:min(100%,310px);max-height:380px;object-fit:cover;object-position:center 35%;margin:20px auto;border-radius:25px;border:7px solid white;box-shadow:0 10px 30px #b34b7420}
-.gifts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0}
-.gift{background:#fff4f7;border:1px solid #f5c6d5;border-radius:20px;padding:17px 5px;color:var(--deep);font-weight:800;min-width:0}
-.gift span{display:block;font-size:36px;margin-bottom:8px}
-.gift small{font-size:12px}
-.letter{background:#fffaf0;text-align:left;padding:24px 19px;border:2px dashed #e9a2b9;border-radius:16px;line-height:1.9;white-space:pre-line}
-.letter h2{text-align:center;font-family:Georgia,serif;font-style:italic}
-.reason{padding:16px;border-radius:17px;background:#fff4f7;margin:11px 0;text-align:left;line-height:1.55}
-.reason b{color:var(--deep)}
-.song-card{padding:18px;background:#fff4f7;border-radius:22px}
-audio{width:100%;margin-top:12px}
-.note{font-size:12px;opacity:.8}
-.heart{position:fixed;bottom:-35px;pointer-events:none;animation:rise 4s linear forwards;z-index:9}
-@keyframes rise{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
-footer{padding:24px;font-size:12px;color:#a65c79}
-@media(max-width:370px){main{padding-inline:12px}.gifts{gap:6px}.gift{padding:14px 3px}.gift span{font-size:30px}.btn{padding:12px 17px}}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe4ec, #fff0f5, #fce1ff);
+  color: #713b55;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 35px 18px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.page.active {
+  display: flex;
+}
+
+.card {
+  width: 100%;
+  max-width: 540px;
+  background: rgba(255,255,255,0.85);
+  padding: 25px 20px;
+  border-radius: 25px;
+  box-shadow: 0 8px 28px #d98eae45;
+}
+
+h1 {
+  color: #d64e87;
+  font-size: 2rem;
+}
+
+h2 {
+  color: #d64e87;
+}
+
+p {
+  line-height: 1.7;
+}
+
+.cat {
+  font-size: 90px;
+  margin: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 13px 25px;
+  margin: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #ed78a7;
+  color: white;
+  box-shadow: 0 4px 10px #d66b9940;
+}
+
+button:hover {
+  transform: scale(1.04);
+}
+
+.secondary {
+  background: #fff;
+  color: #d64e87;
+  border: 2px solid #f4b2cd;
+}
+
+.gift {
+  background: #fff3f8;
+  padding: 18px;
+  margin: 13px 0;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 19px;
+  border: 2px solid #f8c6da;
+}
+
+.gift:hover {
+  background: #ffe2ee;
+}
+
+.photo {
+  width: 100%;
+  max-width: 300px;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: 15px auto;
+  box-shadow: 0 5px 18px #d98eae50;
+}
+
+.letter {
+  text-align: left;
+  white-space: pre-line;
+}
+
+.reason {
+  background: #fff1f7;
+  padding: 12px;
+  border-radius: 14px;
+  margin: 10px 0;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.song-card {
+  background: #fff1f7;
+  border-radius: 20px;
+  padding: 16px;
+  margin-top: 15px;
+}
+
+.video-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 15px auto;
+}
+
+.video-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+}
+
+.small {
+  font-size: 13px;
+  color: #9b6680;
+}
+
+.heart {
+  font-size: 25px;
+  animation: beat 1s infinite alternate;
+}
+
+@keyframes beat {
+  to { transform: scale(1.15); }
+}
 </style>
 </head>
+
 <body>
-<main>
-  <section class="hero" id="welcome">
-    <div class="eyebrow">a tiny surprise made just for you 🌷</div>
-    <h1>Good Morning,<br>My Love ☀️</h1>
-    <p>I hope this little corner of the internet<br>makes you smile today. 💗</p>
-    <div class="kitty" aria-label="kitten with flowers">🐱💐</div>
-    <p>Will you accept your little gift?</p>
-    <button class="btn" onclick="acceptGift()">YES, OPEN IT 💌</button>
-    <button class="btn light" onclick="sayNo()">NO 🙈</button>
-    <div id="noMessage" class="panel hidden">
-      <h2>HOW DARE YOU! 😾</h2>
-      <div class="kitty">🐱🎀</div>
-      <p>My tiny gift is shy… give it another chance? 🥺</p>
-      <button class="btn" onclick="acceptGift()">TRY AGAIN 💗</button>
+
+<!-- WELCOME PAGE -->
+<section id="welcome" class="page active">
+  <div class="card">
+    <div class="cat">🐱🎀</div>
+    <h1>PLS ACCEPT THE GIFT 💌</h1>
+    <p>I made something special just for you.</p>
+    <p>Will you accept my little gift? 🥺💗</p>
+
+    <button onclick="showPage('gifts')">YES, OF COURSE 💗</button>
+    <button class="secondary" onclick="showPage('noPage')">NO 🙄</button>
+
+    <p class="heart">💕 💗 💕</p>
+  </div>
+</section>
+
+<!-- NO PAGE -->
+<section id="noPage" class="page">
+  <div class="card">
+    <div class="cat">😾</div>
+    <h1>HOW DARE YOU! 😭</h1>
+    <p>You can't reject my gift like that!</p>
+    <p>Ab dobara try karo. 🥹💗</p>
+    <button onclick="showPage('welcome')">TRY AGAIN 💌</button>
+  </div>
+</section>
+
+<!-- THREE GIFTS -->
+<section id="gifts" class="page">
+  <div class="card">
+    <h1>YAYYY! YOU ACCEPTED! 💗</h1>
+    <p>Here are your three little gifts. 🎁</p>
+
+    <div class="gift" onclick="showPage('letter')">
+      💌 Gift 1 — A Little Letter
     </div>
-  </section>
 
-  <section id="giftPage" class="panel hidden">
-    <div class="eyebrow">pick your surprise</div>
-    <h2>Three little gifts for you 🎁</h2>
-    <p>Each one has a little piece of my heart.</p>
-    <div class="gifts">
-      <button class="gift" onclick="showSection('letterSection')"><span>💌</span><small>My letter</small></button>
-      <button class="gift" onclick="showSection('songSection')"><span>🎧</span><small>Our song</
-  <iframe<iframe
-  width="100%"
-  height="250"
-  src="https://www.youtube.com/embed/2vRdzTzR4tI"
-  title="Tera Naam Doon"
-  allow="encrypted-media; picture-in-picture"
-  allowfullscreen>
-  </iframe>
-    width="100%"
-    height="250"
-
-    title="Tera Naam Doon"
-    allow="encrypted-media; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-      </div></button>
-      <button class="gift" onclick="showSection('reasonsSection')"><span>💗</span><small>Why I love you</small></button>
+    <div class="gift" onclick="showPage('song')">
+      🎶 Gift 2 — Our Song
     </div>
-    <p class="note">Tap any gift to open it ✨</p>
-  </section>
 
-  <section id="letterSection" class="panel hidden">
-    <div class="eyebrow">gift one · just for you</div>
-    <h2>My letter to you 💌</h2>
-    <img class="photo" src="her-photo.jpg" alt="A special photo">
-    <div class="letter">Good morning, my favourite person. 🌷
+    <div class="gift" onclick="showPage('reasons')">
+      💗 Gift 3 — Things I Love About You
+    </div>
 
-I wish I could be there to give you the biggest hug and remind you how special you are to me.
+    <button class="secondary" onclick="showPage('welcome')">
+      BACK 🏡
+    </button>
+  </div>
+</section>
 
-You feel like home to me — the person I want to tell everything to, the person I look for when my day feels heavy, and the person who can make ordinary moments feel important.
+<!-- LETTER GIFT -->
+<section id="letter" class="page">
+  <div class="card">
+    <h1>A Letter For You 💌</h1>
 
-I know we may have difficult moments sometimes, and I might not always find the perfect words. But I care about you, I value what we have, and I want us to keep listening to each other and choosing kindness.
+    <img class="photo" src="her-photo.jpg"
+         alt="A favourite memory of us">
 
-I hope today brings you little reasons to smile. Please take care of yourself, eat something good, and remember that you deserve gentleness and happiness.
+    <div class="letter">
+      <p>To my favourite person, 💗</p>
 
-Thank you for being you, cutuuu. You mean so much to me. 💗
+      I don't think you realise how special you are to me.
 
-With all my love,
-your girl 🌸</div>
-    <button class="btn light" onclick="backToGifts()">BACK TO GIFTS 🎁</button>
-  </section>
+      You have become such an important part of my life. You're the person I want to share my happiness with, the person I think about when something happens, and the person whose presence makes things feel a little better.
 
-  <section id="songSection" class="panel hidden">
-    <div class="eyebrow">gift two · press play</div>
-    <h2>Tera Naam Doon 🎶</h2>
-    <img class="photo" src="her-photo.jpg" alt="A favourite memory">
+      Thank you for taking care of me, understanding me, and being someone I can trust with my whole heart.
+
+      No matter how annoying we get with each other sometimes, you will always have a very special place in my heart.
+
+      I'm so grateful that I got to know you and become this close to you.
+
+      I hope you always remember that you're loved, appreciated, and precious to me.
+
+      <p>You're my comfort person, always. 🫂💗</p>
+
+      <p>With lots of love,<br>Your favourite person 💋</p>
+    </div>
+
+    <button onclick="showPage('gifts')">BACK TO GIFTS 🎁</button>
+  </div>
+</section>
+
+<!-- SONG GIFT -->
+<section id="song" class="page">
+  <div class="card">
+    <div class="heart">🎵 💗 🎵</div>
+
+    <div class="eyebrow">GIFT TWO · PRESS PLAY</div>
+    <h1>Tera Naam Doon 🎶</h1>
+
+    <img class="photo" src="her-photo.jpg"
+         alt="A favourite memory">
+
     <div class="song-card">
-      <div style="font-size:38px">🎵💗🎵</div>
-      <p>A song for you, my love.</p>
-      <iframe
-  width="100%"
-  height="250"
-  src="https://www.youtube.com/embed/2vRdzTzR4tI"
-  title="Tera Naam Doon"
-  frameborder="0"
-  allow="encrypted-media; picture-in-picture"
-  allowfullscreen>
-      </iframe>
-      </audio>
-    </div>
-    <button class="btn light" onclick="backToGifts()">BACK TO GIFTS 🎁</button>
-  </section>
+      <p>A song for you, my love. 💗</p>
 
-  <section id="reasonsSection" class="panel hidden">
-    <div class="eyebrow">gift three · ten little reasons</div>
-    <h2>Things I love about you 💗</h2>
-    <p>Tap the button to reveal them one by one.</p>
-    <div id="reasonsList"></div>
-    <button class="btn" onclick="revealReason()">REVEAL A REASON 💌</button>
-    <p id="reasonCount" class="note">0 of 10 revealed</p>
-    <button class="btn light" onclick="backToGifts()">BACK TO GIFTS 🎁</button>
-  </section>
-</main>
-<footer>made with love, just for you 💗</footer>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/2vRdzTzR4tI"
+          title="Tera Naam Doon"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="small">
+        Tap the play button to listen. 🎧
+      </p>
+
+      <p>
+        Some songs remind us of people who mean the world to us. 💕
+      </p>
+    </div>
+
+    <button onclick="showPage('gifts')">BACK TO GIFTS 🎁</button>
+  </div>
+</section>
+
+<!-- REASONS GIFT -->
+<section id="reasons" class="page">
+  <div class="card">
+    <h1>Things I Love About You 💗</h1>
+    <p>And these are only a few of them. 🫶🏻</p>
+
+    <div class="reason">
+      1. You take care of me like my mother. 🥹
+    </div>
+
+    <div class="reason">
+      2. You're literally my comfort zone which I never wanna lose. 🫂
+    </div>
+
+    <div class="reason">
+      3. You're the first and the last girl which I will love like that. 💗
+    </div>
+
+    <div class="reason">
+      4. Sometimes you become thoda sa 🤏🏻 annoying but in the end of the day you're the only person I wanna go to. 😂💋
+    </div>
+
+    <div class="reason">
+      5. You're the love of my lifeee. 🫠💋
+    </div>
+
+    <div class="reason">
+      6. You're the person I got so freaking much close with. 💕
+    </div>
+
+    <div class="reason">
+      7. You're the only person I trust with my whole heart. ❤️
+    </div>
+
+    <div class="reason">
+      8. You're the only person who my family asks about more than me. 😭
+    </div>
+
+    <div class="reason">
+      9. You're the cutuuu. 🎀
+    </div>
+
+    <p><b>Last but not the least... 🥹💗</b></p>
+
+    <div class="reason">
+      10. You're the only person my mom and grandmother love that much that they always ask about you. 🫶🏻
+    </div>
+
+    <p class="heart">I LOVE YOU SO MUCH! 💗</p>
+
+    <button onclick="showPage('gifts')">BACK TO GIFTS 🎁</button>
+  </div>
+</section>
 
 <script>
-const reasons = [
-  "You take care of me like my mother, and that makes me feel so looked after. 🌷",
-  "You're literally my comfort zone, and you're someone I never want to take for granted. 🫂",
-  "You're the first and last girl I want to love this way. 💗",
-  "Sometimes you're a little 🤏🏻 annoying, but at the end of the day, you're the person I want to go to. 😂💕",
-  "You're the love of my lifeee. 🫠💋",
-  "I've become so freaking close to you, and that closeness means everything to me. 🧸",
-  "You're the person I trust with my whole heart. 🤍",
-  "My family asks about you so much that sometimes they ask about you more than me. 😭",
-  "You're simply the cutuuu. 🎀",
-  "My mom and grandmother care about you so much and always ask about you. That makes you feel like part of my little world. 🌸"
-];
-let revealed = 0;
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(function(page) {
+    page.classList.remove('active');
+  });
 
-function acceptGift(){
-  document.getElementById("noMessage").classList.add("hidden");
-  document.getElementById("giftPage").classList.remove("hidden");
-  document.getElementById("giftPage").scrollIntoView({behavior:"smooth"});
-  makeHearts();
-}
-function sayNo(){
-  document.getElementById("noMessage").classList.remove("hidden");
-  document.getElementById("noMessage").scrollIntoView({behavior:"smooth",block:"center"});
-}
-function showSection(id){
-  ["letterSection","songSection","reasonsSection"].forEach(x=>document.getElementById(x).classList.add("hidden"));
-  document.getElementById(id).classList.remove("hidden");
-  document.getElementById(id).scrollIntoView({behavior:"smooth",block:"start"});
-  makeHearts();
-}
-function backToGifts(){
-  ["letterSection","songSection","reasonsSection"].forEach(x=>document.getElementById(x).classList.add("hidden"));
-  document.getElementById("giftPage").scrollIntoView({behavior:"smooth",block:"start"});
-}
-function revealReason(){
-  if(revealed>=reasons.length) return;
-  const box=document.createElement("div");
-  box.className="reason";
-  box.innerHTML="<b>Reason "+(revealed+1)+" 💗</b><br>"+reasons[revealed];
-  document.getElementById("reasonsList").appendChild(box);
-  revealed++;
-  document.getElementById("reasonCount").textContent=revealed+" of 10 revealed";
-  if(revealed===reasons.length) document.querySelector("#reasonsSection .btn").textContent="ALL MY REASONS, JUST FOR YOU 💖";
-  makeHearts();
-}
-function makeHearts(){
-  const emojis=["💗","💕","🌸","✨","💖"];
-  for(let i=0;i<12;i++){
-    const el=document.createElement("div");
-    el.className="heart";
-    el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
-    el.style.left=Math.random()*100+"vw";
-    el.style.fontSize=(16+Math.random()*15)+"px";
-    el.style.animationDuration=(3+Math.random()*2)+"s";
-    document.body.appendChild(el);
-    setTimeout(()=>el.remove(),5500);
+  const selectedPage = document.getElementById(pageId);
+
+  if (selectedPage) {
+    selectedPage.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
 </script>
+
 </body>
 </html>
